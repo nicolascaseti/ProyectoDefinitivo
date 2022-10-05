@@ -6,29 +6,19 @@ from django.template import loader
 
 # Create your views here.
 
-#def familiares(request):
-#    familiar1=Familiar(nombre='Pipo', apellido='Gorosito', edad=41)
-#    familiar1.save()
-#    familiar2=Familiar(nombre='Beto', apellido='Acosta', edad=39)
-#    familiar2.save()
-#    familiar3=Familiar(nombre='Pipi', apellido='Romanogli', edad=41)
-#    familiar3.save()
-    #return render(request, 'familiares.html')
-    
-#    return HttpResponse()
-
 
 def familiares(request):
     template = loader.get_template("familiares.html")
    
     familiar1 = Familiar(nombre="Pipo", apellido="Gorosito", edad="41", nac ="1995-01-05")
+    familiar1.save()
 
     
     familiar2 = Familiar(nombre="Beto", apellido="Acosta", edad="36", nac ="1995-04-09")
-
+    familiar2.save()
     
     familiar3 = Familiar(nombre="Pipi", apellido="Romanogli", edad="53", nac ="1995-06-25")
-
+    familiar3.save()
     
     dic_de_contexto = {
         "familiar1" : familiar1,
